@@ -1,0 +1,445 @@
+{
+	"info": {
+		"_postman_id": "253cb62a-be29-4ddf-8978-10cb3216da8c",
+		"name": "MAIL.TM",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "23991426"
+	},
+	"item": [
+		{
+			"name": "new account",
+			"request": {
+				"auth": {
+					"type": "bearer"
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"address\":\"helga876a@eurokool.com\",\r\n    \"password\":\"12345\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{basePath}}/accounts",
+					"host": [
+						"{{basePath}}"
+					],
+					"path": [
+						"accounts"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Status 201 Created",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"address\":\"helga876a@eurokool.com\",\r\n    \"password\":\"12345\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{basePath}}/accounts",
+							"host": [
+								"{{basePath}}"
+							],
+							"path": [
+								"accounts"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": null,
+					"header": null,
+					"cookie": [],
+					"body": null
+				}
+			]
+		},
+		{
+			"name": "token",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"address\":\"helga876a@eurokool.com\",\r\n    \"password\":\"12345\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{basePath}}/token",
+					"host": [
+						"{{basePath}}"
+					],
+					"path": [
+						"token"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "domains",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzUxMiJ9.eyJpYXQiOjE2NzcyNTMzODEsInJvbGVzIjpbIlJPTEVfVVNFUiJdLCJ1c2VybmFtZSI6ImhlbGdhODc2YUBldXJva29vbC5jb20iLCJpZCI6IjYzZjhkNjY2MmZmOWM3YWQ2ZTBhYTIwNCIsIm1lcmN1cmUiOnsic3Vic2NyaWJlIjpbIi9hY2NvdW50cy82M2Y4ZDY2NjJmZjljN2FkNmUwYWEyMDQiXX19.6_lGUPCNRwSCbuVIy6iMPn5N8fKmkVo3XqA-4_aOOKqFfVnxBkMJsR10emgt-oZPsOs0EGwvWh3WItDTUoE8IA",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{basePath}}/domains?page=1",
+					"host": [
+						"{{basePath}}"
+					],
+					"path": [
+						"domains"
+					],
+					"query": [
+						{
+							"key": "page",
+							"value": "1"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "domain/id",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzUxMiJ9.eyJpYXQiOjE2NzcyNTMzODEsInJvbGVzIjpbIlJPTEVfVVNFUiJdLCJ1c2VybmFtZSI6ImhlbGdhODc2YUBldXJva29vbC5jb20iLCJpZCI6IjYzZjhkNjY2MmZmOWM3YWQ2ZTBhYTIwNCIsIm1lcmN1cmUiOnsic3Vic2NyaWJlIjpbIi9hY2NvdW50cy82M2Y4ZDY2NjJmZjljN2FkNmUwYWEyMDQiXX19.6_lGUPCNRwSCbuVIy6iMPn5N8fKmkVo3XqA-4_aOOKqFfVnxBkMJsR10emgt-oZPsOs0EGwvWh3WItDTUoE8IA",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{basePath}}/domains/?id=@uerokool.com",
+					"host": [
+						"{{basePath}}"
+					],
+					"path": [
+						"domains",
+						""
+					],
+					"query": [
+						{
+							"key": "id",
+							"value": "@uerokool.com"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "account/id",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzUxMiJ9.eyJpYXQiOjE2NzcyNTMzODEsInJvbGVzIjpbIlJPTEVfVVNFUiJdLCJ1c2VybmFtZSI6ImhlbGdhODc2YUBldXJva29vbC5jb20iLCJpZCI6IjYzZjhkNjY2MmZmOWM3YWQ2ZTBhYTIwNCIsIm1lcmN1cmUiOnsic3Vic2NyaWJlIjpbIi9hY2NvdW50cy82M2Y4ZDY2NjJmZjljN2FkNmUwYWEyMDQiXX19.6_lGUPCNRwSCbuVIy6iMPn5N8fKmkVo3XqA-4_aOOKqFfVnxBkMJsR10emgt-oZPsOs0EGwvWh3WItDTUoE8IA",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{basePath}}/accounts/:id",
+					"host": [
+						"{{basePath}}"
+					],
+					"path": [
+						"accounts",
+						":id"
+					],
+					"variable": [
+						{
+							"key": "id",
+							"value": "63f8d6662ff9c7ad6e0aa204"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "me",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzUxMiJ9.eyJpYXQiOjE2NzcyNTMzODEsInJvbGVzIjpbIlJPTEVfVVNFUiJdLCJ1c2VybmFtZSI6ImhlbGdhODc2YUBldXJva29vbC5jb20iLCJpZCI6IjYzZjhkNjY2MmZmOWM3YWQ2ZTBhYTIwNCIsIm1lcmN1cmUiOnsic3Vic2NyaWJlIjpbIi9hY2NvdW50cy82M2Y4ZDY2NjJmZjljN2FkNmUwYWEyMDQiXX19.6_lGUPCNRwSCbuVIy6iMPn5N8fKmkVo3XqA-4_aOOKqFfVnxBkMJsR10emgt-oZPsOs0EGwvWh3WItDTUoE8IA",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{basePath}}/me",
+					"host": [
+						"{{basePath}}"
+					],
+					"path": [
+						"me"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "messages",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzUxMiJ9.eyJpYXQiOjE2NzcyNTMzODEsInJvbGVzIjpbIlJPTEVfVVNFUiJdLCJ1c2VybmFtZSI6ImhlbGdhODc2YUBldXJva29vbC5jb20iLCJpZCI6IjYzZjhkNjY2MmZmOWM3YWQ2ZTBhYTIwNCIsIm1lcmN1cmUiOnsic3Vic2NyaWJlIjpbIi9hY2NvdW50cy82M2Y4ZDY2NjJmZjljN2FkNmUwYWEyMDQiXX19.6_lGUPCNRwSCbuVIy6iMPn5N8fKmkVo3XqA-4_aOOKqFfVnxBkMJsR10emgt-oZPsOs0EGwvWh3WItDTUoE8IA",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{basePath}}/messages?page=1",
+					"host": [
+						"{{basePath}}"
+					],
+					"path": [
+						"messages"
+					],
+					"query": [
+						{
+							"key": "page",
+							"value": "1"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "message/id",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzUxMiJ9.eyJpYXQiOjE2NzcyNTMzODEsInJvbGVzIjpbIlJPTEVfVVNFUiJdLCJ1c2VybmFtZSI6ImhlbGdhODc2YUBldXJva29vbC5jb20iLCJpZCI6IjYzZjhkNjY2MmZmOWM3YWQ2ZTBhYTIwNCIsIm1lcmN1cmUiOnsic3Vic2NyaWJlIjpbIi9hY2NvdW50cy82M2Y4ZDY2NjJmZjljN2FkNmUwYWEyMDQiXX19.6_lGUPCNRwSCbuVIy6iMPn5N8fKmkVo3XqA-4_aOOKqFfVnxBkMJsR10emgt-oZPsOs0EGwvWh3WItDTUoE8IA",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{basePath}}/messages/:id",
+					"host": [
+						"{{basePath}}"
+					],
+					"path": [
+						"messages",
+						":id"
+					],
+					"variable": [
+						{
+							"key": "id",
+							"value": "64066ba2202bb73bbce30d6d"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "message delete",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzUxMiJ9.eyJpYXQiOjE2NzcyNTMzODEsInJvbGVzIjpbIlJPTEVfVVNFUiJdLCJ1c2VybmFtZSI6ImhlbGdhODc2YUBldXJva29vbC5jb20iLCJpZCI6IjYzZjhkNjY2MmZmOWM3YWQ2ZTBhYTIwNCIsIm1lcmN1cmUiOnsic3Vic2NyaWJlIjpbIi9hY2NvdW50cy82M2Y4ZDY2NjJmZjljN2FkNmUwYWEyMDQiXX19.6_lGUPCNRwSCbuVIy6iMPn5N8fKmkVo3XqA-4_aOOKqFfVnxBkMJsR10emgt-oZPsOs0EGwvWh3WItDTUoE8IA",
+							"type": "string"
+						}
+					]
+				},
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "https://api.mail.tm/messages/63f8e696ae5a7169c89dec61",
+					"protocol": "https",
+					"host": [
+						"api",
+						"mail",
+						"tm"
+					],
+					"path": [
+						"messages",
+						"63f8e696ae5a7169c89dec61"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "sources/ id",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzUxMiJ9.eyJpYXQiOjE2NzcyNTMzODEsInJvbGVzIjpbIlJPTEVfVVNFUiJdLCJ1c2VybmFtZSI6ImhlbGdhODc2YUBldXJva29vbC5jb20iLCJpZCI6IjYzZjhkNjY2MmZmOWM3YWQ2ZTBhYTIwNCIsIm1lcmN1cmUiOnsic3Vic2NyaWJlIjpbIi9hY2NvdW50cy82M2Y4ZDY2NjJmZjljN2FkNmUwYWEyMDQiXX19.6_lGUPCNRwSCbuVIy6iMPn5N8fKmkVo3XqA-4_aOOKqFfVnxBkMJsR10emgt-oZPsOs0EGwvWh3WItDTUoE8IA",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://api.mail.tm/sources/63f8f2358d8f429dcab73a9f",
+					"protocol": "https",
+					"host": [
+						"api",
+						"mail",
+						"tm"
+					],
+					"path": [
+						"sources",
+						"63f8f2358d8f429dcab73a9f"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "marked seen",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzUxMiJ9.eyJpYXQiOjE2NzcyNTMzODEsInJvbGVzIjpbIlJPTEVfVVNFUiJdLCJ1c2VybmFtZSI6ImhlbGdhODc2YUBldXJva29vbC5jb20iLCJpZCI6IjYzZjhkNjY2MmZmOWM3YWQ2ZTBhYTIwNCIsIm1lcmN1cmUiOnsic3Vic2NyaWJlIjpbIi9hY2NvdW50cy82M2Y4ZDY2NjJmZjljN2FkNmUwYWEyMDQiXX19.6_lGUPCNRwSCbuVIy6iMPn5N8fKmkVo3XqA-4_aOOKqFfVnxBkMJsR10emgt-oZPsOs0EGwvWh3WItDTUoE8IA",
+							"type": "string"
+						}
+					]
+				},
+				"method": "PATCH",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/merge-patch+json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"seen\" : true\r\n}"
+				},
+				"url": {
+					"raw": "{{basePath}}/messages/:id",
+					"host": [
+						"{{basePath}}"
+					],
+					"path": [
+						"messages",
+						":id"
+					],
+					"variable": [
+						{
+							"key": "id",
+							"value": "64066ba2202bb73bbce30d6d"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "New Request",
+			"request": {
+				"method": "GET",
+				"header": []
+			},
+			"response": []
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "basePath",
+			"value": "https://api.mail.tm",
+			"type": "string"
+		}
+	]
+}
