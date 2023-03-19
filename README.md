@@ -30,4 +30,4 @@ Mentioned above service allows users to create temporary email addresses in orde
 API requests in POSTMAN confirmed that web-site functions operate in the correct way from the inside. API requests you can find in ***POSTMAN Collection MAIL.TM.*** 
 
 In the check-list you can find all checks that were conducted with Mail.tm web-service, some of them are not included in test-cases. Use the link to see test-cases, test run and test plan:
-[My test cases] (https://app.qase.io/project/MT) 
+[My test cases] (https://app.qase.io/project/MT?previewMode=side&suite=3).
