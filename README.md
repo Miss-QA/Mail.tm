@@ -10,24 +10,24 @@ Mentioned above service allows users to create temporary email addresses in orde
  -get confirmation emails with links.
  
 
-***To confirm its helpfullness main functionality of this servise was checked:*** 
+***To confirm its helpfullness main functionality of this service was checked:*** 
 
 -creation and 
 
--generation of temporary email;
+-generation of temporary emails;
 
 -account deletion; 
 
 -login;
 
--singing out;
+-signing out;
 
 -sending emails to temporary mailboxes with different mail bodies and attached files;
 
--monipulations with recieved emails and its attachments (opening, saving, removing, printing).
+-manipulations with recieved emails and their attachments (opening, saving, removing, printing).
   
 
 API requests in POSTMAN confirmed that web-site functions operate in the correct way from the inside. API requests you can find in ***POSTMAN Collection MAIL.TM.*** 
 
-In the check-list you can find all checks that were conducted with Mail.tm web-service, some of them are not included in test-cases. Use the link to see test-cases, test run and test plan:
+In the check-list you can find all checks that were conducted with Mail.tm web-service, some of them are not included in test-cases. Use the link to see test-cases, a test run and test plan:
 [My test cases] (https://app.qase.io/project/MT?previewMode=side&suite=3).
