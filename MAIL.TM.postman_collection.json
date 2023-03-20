@@ -1,0 +1,885 @@
+{
+	"info": {
+		"_postman_id": "253cb62a-be29-4ddf-8978-10cb3216da8c",
+		"name": "MAIL.TM",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "23991426"
+	},
+	"item": [
+		{
+			"name": "new account",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"address\":\"hoho7085@eurokool.com\",\r\n    \"password\":\"12345\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{basePath}}/accounts",
+					"host": [
+						"{{basePath}}"
+					],
+					"path": [
+						"accounts"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Status 201 Created",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"address\":\"helga876a@eurokool.com\",\r\n    \"password\":\"12345\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{basePath}}/accounts",
+							"host": [
+								"{{basePath}}"
+							],
+							"path": [
+								"accounts"
+							]
+						}
+					},
+					"status": "Created",
+					"code": 201,
+					"_postman_previewlanguage": null,
+					"header": null,
+					"cookie": [],
+					"body": "{\r\n    \"@context\": \"/contexts/Account\",\r\n    \"@id\": \"/accounts/6408cc6a20d43d390709e898\",\r\n    \"@type\": \"Account\",\r\n    \"id\": \"6408cc6a20d43d390709e898\",\r\n    \"address\": \"hoho7185@eurokool.com\",\r\n    \"quota\": 40000000,\r\n    \"used\": 0,\r\n    \"isDisabled\": false,\r\n    \"isDeleted\": false,\r\n    \"createdAt\": \"2023-03-08T17:56:58+00:00\",\r\n    \"updatedAt\": \"2023-03-08T17:56:58+00:00\"\r\n}"
+				},
+				{
+					"name": "Status 422 Unprocessable Entity",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": " {\"address\":\"@eurokoon.com\",\r\n\r\n \"password\":\"12345\" }",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{basePath}}/accounts",
+							"host": [
+								"{{basePath}}"
+							],
+							"path": [
+								"accounts"
+							]
+						}
+					},
+					"_postman_previewlanguage": null,
+					"header": null,
+					"cookie": [],
+					"body": "{\r\n    \"@context\": \"/contexts/ConstraintViolationList\",\r\n    \"@type\": \"ConstraintViolationList\",\r\n    \"hydra:title\": \"An error occurred\",\r\n    \"hydra:description\": \"address: This value is not a valid email address.\",\r\n    \"violations\": [\r\n        {\r\n            \"propertyPath\": \"address\",\r\n            \"message\": \"This value is not a valid email address.\",\r\n            \"code\": \"bd79c0ab-ddba-46cc-a703-a7a4b08de310\"\r\n        }\r\n    ]\r\n}"
+				}
+			]
+		},
+		{
+			"name": "token",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"address\":\"helga876a@eurokool.com\",\r\n    \"password\":\"12345\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{basePath}}/token",
+					"host": [
+						"{{basePath}}"
+					],
+					"path": [
+						"token"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "token 200 OK",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"address\":\"helga876a@eurokool.com\",\r\n    \"password\":\"12345\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{basePath}}/token",
+							"host": [
+								"{{basePath}}"
+							],
+							"path": [
+								"token"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": null,
+					"header": null,
+					"cookie": [],
+					"body": "{\r\n    \"token\": \"eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzUxMiJ9.eyJpYXQiOjE2NzgyOTgzMTUsInJvbGVzIjpbIlJPTEVfVVNFUiJdLCJ1c2VybmFtZSI6ImhlbGdhODc2YUBldXJva29vbC5jb20iLCJpZCI6IjYzZjhkNjY2MmZmOWM3YWQ2ZTBhYTIwNCIsIm1lcmN1cmUiOnsic3Vic2NyaWJlIjpbIi9hY2NvdW50cy82M2Y4ZDY2NjJmZjljN2FkNmUwYWEyMDQiXX19.o6v0RwXbISQhJVJ3H-Ic1-JT5wlC7keeLPiUp0OtamDVzgwtg9srLCuFiTBJFfq8CV9ReeNy8MCyCaL3rDX8LA\",\r\n    \"id\": \"63f8d6662ff9c7ad6e0aa204\"\r\n}"
+				}
+			]
+		},
+		{
+			"name": "domains",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{basePath}}/domains?page=1",
+					"host": [
+						"{{basePath}}"
+					],
+					"path": [
+						"domains"
+					],
+					"query": [
+						{
+							"key": "page",
+							"value": "1"
+						}
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "domains 200 OK",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{basePath}}/domains?page=1",
+							"host": [
+								"{{basePath}}"
+							],
+							"path": [
+								"domains"
+							],
+							"query": [
+								{
+									"key": "page",
+									"value": "1"
+								}
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": null,
+					"header": null,
+					"cookie": [],
+					"body": "{\r\n    \"@context\": \"/contexts/Domain\",\r\n    \"@id\": \"/domains\",\r\n    \"@type\": \"hydra:Collection\",\r\n    \"hydra:member\": [\r\n        {\r\n            \"@id\": \"/domains/63d9a7067f7658e92f217bdd\",\r\n            \"@type\": \"Domain\",\r\n            \"id\": \"63d9a7067f7658e92f217bdd\",\r\n            \"domain\": \"eurokool.com\",\r\n            \"isActive\": true,\r\n            \"isPrivate\": false,\r\n            \"createdAt\": \"2023-02-01T00:00:00+00:00\",\r\n            \"updatedAt\": \"2023-02-01T00:00:00+00:00\"\r\n        }\r\n    ],\r\n    \"hydra:totalItems\": 1\r\n}"
+				},
+				{
+					"name": "domains 400 Bad Request",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{basePath}}/domains?page=0",
+							"host": [
+								"{{basePath}}"
+							],
+							"path": [
+								"domains"
+							],
+							"query": [
+								{
+									"key": "page",
+									"value": "0"
+								}
+							]
+						}
+					},
+					"status": "Bad Request",
+					"code": 400,
+					"_postman_previewlanguage": null,
+					"header": null,
+					"cookie": [],
+					"body": "{\r\n    \"@context\": \"/contexts/Error\",\r\n    \"@type\": \"hydra:Error\",\r\n    \"hydra:title\": \"An error occurred\",\r\n    \"hydra:description\": \"Page should not be less than 1\"\r\n}\r\n\t"
+				}
+			]
+		},
+		{
+			"name": "domains/id",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{basePath}}/domains/?id=@uerokool.com",
+					"host": [
+						"{{basePath}}"
+					],
+					"path": [
+						"domains",
+						""
+					],
+					"query": [
+						{
+							"key": "id",
+							"value": "@uerokool.com"
+						}
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "domains/id 200 OK",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{basePath}}/domains/?id=@uerokool.com",
+							"host": [
+								"{{basePath}}"
+							],
+							"path": [
+								"domains",
+								""
+							],
+							"query": [
+								{
+									"key": "id",
+									"value": "@uerokool.com"
+								}
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": null,
+					"header": null,
+					"cookie": [],
+					"body": "{\r\n    \"@context\": \"/contexts/Domain\",\r\n    \"@id\": \"/domains\",\r\n    \"@type\": \"hydra:Collection\",\r\n    \"hydra:member\": [\r\n        {\r\n            \"@id\": \"/domains/63d9a7067f7658e92f217bdd\",\r\n            \"@type\": \"Domain\",\r\n            \"id\": \"63d9a7067f7658e92f217bdd\",\r\n            \"domain\": \"eurokool.com\",\r\n            \"isActive\": true,\r\n            \"isPrivate\": false,\r\n            \"createdAt\": \"2023-02-01T00:00:00+00:00\",\r\n            \"updatedAt\": \"2023-02-01T00:00:00+00:00\"\r\n        }\r\n    ],\r\n    \"hydra:totalItems\": 1,\r\n    \"hydra:view\": {\r\n        \"@id\": \"/domains?id=%40uerokool.com\",\r\n        \"@type\": \"hydra:PartialCollectionView\"\r\n    }\r\n}"
+				},
+				{
+					"name": "domains/id 404 Not Found",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{basePath}}/domains/:id",
+							"host": [
+								"{{basePath}}"
+							],
+							"path": [
+								"domains",
+								":id"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": "@eurokool.eu"
+								}
+							]
+						}
+					},
+					"status": "Not Found",
+					"code": 404,
+					"_postman_previewlanguage": null,
+					"header": null,
+					"cookie": [],
+					"body": "{\r\n    \"type\": \"https://tools.ietf.org/html/rfc2616#section-10\",\r\n    \"title\": \"An error occurred\",\r\n    \"detail\": \"Format \\\"eu\\\" is not supported\"\r\n}"
+				}
+			]
+		},
+		{
+			"name": "me",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{basePath}}/me",
+					"host": [
+						"{{basePath}}"
+					],
+					"path": [
+						"me"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "me 200 OK",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{basePath}}/me",
+							"host": [
+								"{{basePath}}"
+							],
+							"path": [
+								"me"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": null,
+					"header": null,
+					"cookie": [],
+					"body": "{\r\n    \"@context\": \"/contexts/Account\",\r\n    \"@id\": \"/accounts/63f8d6662ff9c7ad6e0aa204\",\r\n    \"@type\": \"Account\",\r\n    \"id\": \"63f8d6662ff9c7ad6e0aa204\",\r\n    \"address\": \"helga876a@eurokool.com\",\r\n    \"quota\": 40000000,\r\n    \"used\": 1729,\r\n    \"isDisabled\": false,\r\n    \"isDeleted\": false,\r\n    \"createdAt\": \"2023-02-24T15:23:18+00:00\",\r\n    \"updatedAt\": \"2023-02-24T15:23:18+00:00\"\r\n}"
+				}
+			]
+		},
+		{
+			"name": "messages",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{basePath}}/messages?page=1",
+					"host": [
+						"{{basePath}}"
+					],
+					"path": [
+						"messages"
+					],
+					"query": [
+						{
+							"key": "page",
+							"value": "1"
+						}
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "messages 200 OK",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{basePath}}/messages?page=1",
+							"host": [
+								"{{basePath}}"
+							],
+							"path": [
+								"messages"
+							],
+							"query": [
+								{
+									"key": "page",
+									"value": "1"
+								}
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": null,
+					"header": null,
+					"cookie": [],
+					"body": "{\r\n    \"@context\": \"/contexts/Message\",\r\n    \"@id\": \"/messages\",\r\n    \"@type\": \"hydra:Collection\",\r\n    \"hydra:member\": [\r\n        {\r\n            \"@id\": \"/messages/6408fd654a3eda937c3059ac\",\r\n            \"@type\": \"Message\",\r\n            \"id\": \"6408fd654a3eda937c3059ac\",\r\n            \"accountId\": \"/accounts/63f8d6662ff9c7ad6e0aa204\",\r\n            \"msgid\": \"<240621678310717@mail.yandex.by>\",\r\n            \"from\": {\r\n                \"address\": \"ollga888@tut.by\",\r\n                \"name\": \"\"\r\n            },\r\n            \"to\": [\r\n                {\r\n                    \"address\": \"helga876a@eurokool.com\",\r\n                    \"name\": \"\"\r\n                }\r\n            ],\r\n            \"subject\": \"La-la-la\",\r\n            \"intro\": \"Hi! How was your weekend? Let's meet and you'll tell me about it. Miss you, Mark.\",\r\n            \"seen\": false,\r\n            \"isDeleted\": false,\r\n            \"hasAttachments\": false,\r\n            \"size\": 1494,\r\n            \"downloadUrl\": \"/messages/6408fd654a3eda937c3059ac/download\",\r\n            \"createdAt\": \"2023-03-08T21:25:56+00:00\",\r\n            \"updatedAt\": \"2023-03-08T21:25:57+00:00\"\r\n        }\r\n    ],\r\n    \"hydra:totalItems\": 1\r\n}"
+				},
+				{
+					"name": "messages 400 Bad Request",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{basePath}}/messages?page=454545454545487623654",
+							"host": [
+								"{{basePath}}"
+							],
+							"path": [
+								"messages"
+							],
+							"query": [
+								{
+									"key": "page",
+									"value": "454545454545487623654"
+								}
+							]
+						}
+					},
+					"status": "Not Found",
+					"code": 404,
+					"_postman_previewlanguage": null,
+					"header": null,
+					"cookie": [],
+					"body": "{\r\n    \"@context\": \"/contexts/Error\",\r\n    \"@type\": \"hydra:Error\",\r\n    \"hydra:title\": \"An error occurred\",\r\n    \"hydra:description\": \"Page parameter is too large.\"\r\n}\r\n\t"
+				}
+			]
+		},
+		{
+			"name": "messages/id",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzUxMiJ9.eyJpYXQiOjE2NzcyNTMzODEsInJvbGVzIjpbIlJPTEVfVVNFUiJdLCJ1c2VybmFtZSI6ImhlbGdhODc2YUBldXJva29vbC5jb20iLCJpZCI6IjYzZjhkNjY2MmZmOWM3YWQ2ZTBhYTIwNCIsIm1lcmN1cmUiOnsic3Vic2NyaWJlIjpbIi9hY2NvdW50cy82M2Y4ZDY2NjJmZjljN2FkNmUwYWEyMDQiXX19.6_lGUPCNRwSCbuVIy6iMPn5N8fKmkVo3XqA-4_aOOKqFfVnxBkMJsR10emgt-oZPsOs0EGwvWh3WItDTUoE8IA",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{basePath}}/messages/:id",
+					"host": [
+						"{{basePath}}"
+					],
+					"path": [
+						"messages",
+						":id"
+					],
+					"variable": [
+						{
+							"key": "id",
+							"value": "6409d6bc7a25a7a1886ceea1"
+						}
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "message/id 200 OK",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{basePath}}/messages/:id",
+							"host": [
+								"{{basePath}}"
+							],
+							"path": [
+								"messages",
+								":id"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": "6409d6bc7a25a7a1886ceea1"
+								}
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": null,
+					"header": null,
+					"cookie": [],
+					"body": "{\r\n    \"@context\": \"/contexts/Message\",\r\n    \"@id\": \"/messages/64066ba2202bb73bbce30d6d\",\r\n    \"@type\": \"Message\",\r\n    \"id\": \"64066ba2202bb73bbce30d6d\",\r\n    \"accountId\": \"/accounts/63f8d6662ff9c7ad6e0aa204\",\r\n    \"msgid\": \"<4021678142285@mail.yandex.by>\",\r\n    \"from\": {\r\n        \"address\": \"ollga888@tut.by\",\r\n        \"name\": \"\"\r\n    },\r\n    \"to\": [\r\n        {\r\n            \"address\": \"helga876a@eurokool.com\",\r\n            \"name\": \"\"\r\n        }\r\n    ],\r\n    \"cc\": [],\r\n    \"bcc\": [],\r\n    \"subject\": \"New files\",\r\n    \"seen\": true,\r\n    \"flagged\": false,\r\n    \"isDeleted\": false,\r\n    \"verifications\": [],\r\n    \"retention\": true,\r\n    \"retentionDate\": \"2023-03-13T22:39:30+00:00\",\r\n    \"text\": \"Hi!\\nHappy to inform that CEO is coming next week on Wednesday.\\nRegards,\\nMister X.\",\r\n    \"html\": [\r\n        \"<div>Hi!<br />Happy to inform that CEO is coming next week on Wednesday.<br />Regards,<br />Mister X.</div>\"\r\n    ],\r\n    \"hasAttachments\": false,\r\n    \"attachments\": [],\r\n    \"size\": 1729,\r\n    \"downloadUrl\": \"/messages/64066ba2202bb73bbce30d6d/download\",\r\n    \"createdAt\": \"2023-03-06T22:39:29+00:00\",\r\n    \"updatedAt\": \"2023-03-06T22:44:20+00:00\"\r\n}"
+				},
+				{
+					"name": "messages/id 404 Not Found",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{basePath}}/messages/:id",
+							"host": [
+								"{{basePath}}"
+							],
+							"path": [
+								"messages",
+								":id"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": "6409d6bc7a25a7a1886ceea1"
+								}
+							]
+						}
+					},
+					"status": "Not Found",
+					"code": 404,
+					"_postman_previewlanguage": null,
+					"header": null,
+					"cookie": [],
+					"body": "{\r\n    \"@context\": \"/contexts/Error\",\r\n    \"@type\": \"hydra:Error\",\r\n    \"hydra:title\": \"An error occurred\",\r\n    \"hydra:description\": \"Not Found\"\r\n}"
+				}
+			]
+		},
+		{
+			"name": "message delete",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzUxMiJ9.eyJpYXQiOjE2NzcyNTMzODEsInJvbGVzIjpbIlJPTEVfVVNFUiJdLCJ1c2VybmFtZSI6ImhlbGdhODc2YUBldXJva29vbC5jb20iLCJpZCI6IjYzZjhkNjY2MmZmOWM3YWQ2ZTBhYTIwNCIsIm1lcmN1cmUiOnsic3Vic2NyaWJlIjpbIi9hY2NvdW50cy82M2Y4ZDY2NjJmZjljN2FkNmUwYWEyMDQiXX19.6_lGUPCNRwSCbuVIy6iMPn5N8fKmkVo3XqA-4_aOOKqFfVnxBkMJsR10emgt-oZPsOs0EGwvWh3WItDTUoE8IA",
+							"type": "string"
+						}
+					]
+				},
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "{{basePath}}/messages/:id",
+					"host": [
+						"{{basePath}}"
+					],
+					"path": [
+						"messages",
+						":id"
+					],
+					"variable": [
+						{
+							"key": "id",
+							"value": "6409d6bc7a25a7a1886ceea1"
+						}
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "message delete 204 No Content",
+					"originalRequest": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{basePath}}/messages/6409d6bc7a25a7a1886ceea1",
+							"host": [
+								"{{basePath}}"
+							],
+							"path": [
+								"messages",
+								"6409d6bc7a25a7a1886ceea1"
+							]
+						}
+					},
+					"status": "No Content",
+					"code": 204,
+					"_postman_previewlanguage": null,
+					"header": null,
+					"cookie": [],
+					"body": null
+				},
+				{
+					"name": "message delete 404 Not Found",
+					"originalRequest": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{basePath}}/messages/:id",
+							"host": [
+								"{{basePath}}"
+							],
+							"path": [
+								"messages",
+								":id"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": "63f8e696ae5a7169c89dec61"
+								}
+							]
+						}
+					},
+					"status": "Not Found",
+					"code": 404,
+					"_postman_previewlanguage": null,
+					"header": null,
+					"cookie": [],
+					"body": "{\r\n    \"@context\": \"/contexts/Error\",\r\n    \"@type\": \"hydra:Error\",\r\n    \"hydra:title\": \"An error occurred\",\r\n    \"hydra:description\": \"Not Found\"\r\n}\r\n\t"
+				}
+			]
+		},
+		{
+			"name": "sources/ id",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{basePath}}/sources/:id",
+					"host": [
+						"{{basePath}}"
+					],
+					"path": [
+						"sources",
+						":id"
+					],
+					"variable": [
+						{
+							"key": "id",
+							"value": "6408fd654a3eda937c3059ac"
+						}
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "sources/ id 200 OK",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://api.mail.tm/sources/:id",
+							"protocol": "https",
+							"host": [
+								"api",
+								"mail",
+								"tm"
+							],
+							"path": [
+								"sources",
+								":id"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": "6408fd654a3eda937c3059ac"
+								}
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": null,
+					"header": null,
+					"cookie": [],
+					"body": "{\r\n    \"@context\": \"/contexts/Source\",\r\n    \"@id\": \"/sources/6408fd654a3eda937c3059ac\",\r\n    \"@type\": \"Source\",\r\n    \"id\": \"6408fd654a3eda937c3059ac\",\r\n    \"downloadUrl\": \"/messages/6408fd654a3eda937c3059ac/download\",\r\n    \"data\": \"Delivered-To: helga876a@eurokool.com\\r\\nReturn-Path: <ollga888@tut.by>\\r\\nReceived: from forward108j.mail.yandex.net (forward108j.mail.yandex.net [2a02:6b8:0:801:2::253])\\r\\n\\tby in.mail.tm (Haraka/2.8.28) with ESMTPS id 0B5633D2-CA6A-4613-9886-E59939760F42.1\\r\\n\\tenvelope-from <ollga888@tut.by>\\r\\n\\ttls TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384;\\r\\n\\tWed, 08 Mar 2023 21:25:57 +0000\\r\\nReceived: from myt6-e898772bf236.qloud-c.yandex.net (myt6-e898772bf236.qloud-c.yandex.net [IPv6:2a02:6b8:c12:212b:0:640:e898:772b])\\r\\n\\tby forward108j.mail.yandex.net (Yandex) with ESMTP id 0B7DF3F20F29\\r\\n\\tfor <helga876a@eurokool.com>; Thu,  9 Mar 2023 00:25:57 +0300 (MSK)\\r\\nReceived: from mail.yandex.by (2a02:6b8:c12:1124:0:640:f18f:0 [2a02:6b8:c12:1124:0:640:f18f:0])\\r\\n\\tby myt6-e898772bf236.qloud-c.yandex.net (mxback/Yandex) with HTTP id fPki801ZlGk1-Z8Vaupu7;\\r\\n\\tThu, 09 Mar 2023 00:25:56 +0300\\r\\nX-Yandex-Fwd: 1\\r\\nReceived: by cqfxmjbu3o7k6zup.myt.yp-c.yandex.net with HTTP;\\r\\n\\tThu, 09 Mar 2023 00:25:56 +0300\\r\\nFrom: ollga888@tut.by\\r\\nTo: \\\"helga876a@eurokool.com\\\" <helga876a@eurokool.com>\\r\\nSubject: La-la-la\\r\\nMIME-Version: 1.0\\r\\nX-Mailer: Yamail [ http://yandex.ru ] 5.0\\r\\nDate: Thu, 09 Mar 2023 00:25:56 +0300\\r\\nMessage-Id: <240621678310717@mail.yandex.by>\\r\\nContent-Transfer-Encoding: 7bit\\r\\nContent-Type: text/html\\r\\nOriginal-Authentication-Results: myt6-e898772bf236.qloud-c.yandex.net; dkim=pass\\r\\n\\r\\n\\r\\n<div><div>Hi!<br />How was your weekend?<br />Let's meet and you'll tell me about it.<br /><br />Miss you,<br />Mark.</div></div>\\r\\n\"\r\n}"
+				}
+			]
+		},
+		{
+			"name": "marked seen",
+			"request": {
+				"method": "PATCH",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/merge-patch+json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"seen\" : true\r\n}"
+				},
+				"url": {
+					"raw": "{{basePath}}/messages/:id",
+					"host": [
+						"{{basePath}}"
+					],
+					"path": [
+						"messages",
+						":id"
+					],
+					"variable": [
+						{
+							"key": "id",
+							"value": "6408fd654a3eda937c3059ac"
+						}
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "marked seen 200 OK",
+					"originalRequest": {
+						"method": "PATCH",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/merge-patch+json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"seen\" : true\r\n}"
+						},
+						"url": {
+							"raw": "{{basePath}}/messages/:id",
+							"host": [
+								"{{basePath}}"
+							],
+							"path": [
+								"messages",
+								":id"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": "6408fd654a3eda937c3059ac"
+								}
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": null,
+					"header": null,
+					"cookie": [],
+					"body": "{\r\n    \"@context\": \"/contexts/Message\",\r\n    \"@id\": \"/messages/6408fd654a3eda937c3059ac\",\r\n    \"@type\": \"Message\",\r\n    \"seen\": true\r\n}"
+				}
+			]
+		},
+		{
+			"name": "auth check 401 Unauthorized",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "GET",
+				"header": [
+					{
+						"warning": "This is a duplicate header and will be overridden by the Authorization header generated by Postman.",
+						"key": "Authorization",
+						"value": "No Auth",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "{{basePath}}/me",
+					"host": [
+						"{{basePath}}"
+					],
+					"path": [
+						"me"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "auth check 401 Unauthorized",
+					"originalRequest": {
+						"method": "GET",
+						"header": [
+							{
+								"warning": "This is a duplicate header and will be overridden by the Authorization header generated by Postman.",
+								"key": "Authorization",
+								"value": "No Auth",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{basePath}}/me",
+							"host": [
+								"{{basePath}}"
+							],
+							"path": [
+								"me"
+							]
+						}
+					},
+					"status": "Unauthorized",
+					"code": 401,
+					"_postman_previewlanguage": null,
+					"header": null,
+					"cookie": [],
+					"body": "{\r\n    \"code\": 401,\r\n    \"message\": \"JWT Token not found\"\r\n}"
+				}
+			]
+		}
+	],
+	"auth": {
+		"type": "bearer",
+		"bearer": [
+			{
+				"key": "token",
+				"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzUxMiJ9.eyJpYXQiOjE2NzcyNTMzODEsInJvbGVzIjpbIlJPTEVfVVNFUiJdLCJ1c2VybmFtZSI6ImhlbGdhODc2YUBldXJva29vbC5jb20iLCJpZCI6IjYzZjhkNjY2MmZmOWM3YWQ2ZTBhYTIwNCIsIm1lcmN1cmUiOnsic3Vic2NyaWJlIjpbIi9hY2NvdW50cy82M2Y4ZDY2NjJmZjljN2FkNmUwYWEyMDQiXX19.6_lGUPCNRwSCbuVIy6iMPn5N8fKmkVo3XqA-4_aOOKqFfVnxBkMJsR10emgt-oZPsOs0EGwvWh3WItDTUoE8IA",
+				"type": "string"
+			}
+		]
+	},
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "basePath",
+			"value": "https://api.mail.tm",
+			"type": "string"
+		}
+	]
+}
